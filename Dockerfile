@@ -1,19 +1,19 @@
 # Base Image for Building ML App
-FROM python
+FROM python:3.9
 
 # Working Directory
 WORKDIR /mlapp
 
-# Copy Requriments.txt and app.py, and data/rental_1000.csv
-COPY . .
+# Copy Requirements.txt, app.py, and data/rental_1000.csv
+COPY . .  
 
-# Libarires to installed
+# Libraries to install
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose Port 5000
 EXPOSE 5000
 
 # Default Commands to run at start of Container
-CMD ["python","app.py" ]
+CMD ["python", "app.py"]
 
 # Dockerfile was written by Siddarth
